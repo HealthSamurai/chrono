@@ -74,10 +74,11 @@
 
             (not (keyword? f)) (recur (update acc :buff conj f)
                                       rfs)
-            (some? (get t f))  (recur (-> acc
-                                          (update :result concat (conj (:buff acc) f))
-                                          (assoc :buff []))
-                                      rfs)
+            (-> (get t f) str str/blank? not)
+            (recur (-> acc
+                       (update :result concat (conj (:buff acc) f))
+                       (assoc :buff []))
+                   rfs)
             :else              acc))]
     (build t (vec (:result clean-fmt)))))
 
