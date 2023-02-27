@@ -1,7 +1,5 @@
 # chrono
 
-**This project is moved [here](https://github.com/HealthSamurai/unit-map/tree/master/src/unit_map/type/chrono)** 
-
 Pure clojure time made simple for clj & cljs
 
 <img src="clocks.png" height="384px" />
