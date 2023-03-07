@@ -60,7 +60,7 @@ Pure clojure time made simple for clj & cljs
 ;; using custom units
 ;; Add custom normalization method. Example for nanoseconds:
 (require '[chrono.ops :as ops])
-(def normalize-ns (ops/gen-norm :ns :ms 1000000 0))
+(def normalize-ns (ops/gen-norm :ns :ms 1000000 0 0))
 (defmethod ops/normalize-rule :ns [_ t] (normalize-ns t))
 
 (ops/normalize {:ns 1000000000})  ;; => {:sec 1}
